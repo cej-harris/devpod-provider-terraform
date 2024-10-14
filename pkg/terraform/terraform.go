@@ -73,7 +73,7 @@ func EnsureProject(providerTerraform *TerraformProvider) error {
 
 	// if project is an url, try to clone it
 	if strings.Contains(providerTerraform.Project, "http://") ||
-		strings.Contains(providerTerraform.Project, "https://") {
+		strings.Contains(providerTerraform.Project, "https://") || strings.Contains(providerTerraform.Project, "git@") {
 		cmd := exec.Command(
 			"git",
 			"clone",
